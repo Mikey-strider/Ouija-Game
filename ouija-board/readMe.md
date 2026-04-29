@@ -13,10 +13,7 @@ The game will present 3 riddles in which to solve. Once third riddle is solved t
 HTML
 CSS
 JavaScript
-Node.js
-MongoDB
-Express
-Morgan
+
 
 
 ## Next Steps
