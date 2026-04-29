@@ -1,9 +1,10 @@
 function modifyContent() {
   const mainOuijaPage = document.getElementById('main-ouija-page');
 
+      // Main Ouija game build. HTML section.
 
     mainOuijaPage.innerHTML = `
-      <header id="wrapper" class="wrapper">
+      <header id="rules" class="rules">
         <div class="ouija-timer"></div>
           <h1 class="ouija-title">We Speak</h1>
             <ul class="ouija-rule-main">
@@ -15,7 +16,7 @@ function modifyContent() {
             </ul>
       </header>
       <div id="ouija-build">
-      <div id="absinthe-glass">Absinthe Glass</div>
+      <div id="planchette-glass">Planchette Glass</div>
         <section class="ouija-board-build">
           <div id="ouija-sun-moon">Sun and Moon</div>
           <div id="ouija-yes-no">Yes and No</div>
@@ -30,11 +31,13 @@ function modifyContent() {
         </section>
       </div>
       `
-
+      // Quija main game play functionaltiy. 
+    
+    
     const ouijaTimer = document.querySelector('.ouija-timer');
-    const ouijaRuleMain = document.querySelector('.ouija-rule-main');
-    const ouijaRules = document.querySelector('.ouija-rules');
-    const absinthe = document.querySelector('#absinthe-glass');
+    // const ouijaRuleMain = document.querySelector('.ouija-rule-main');
+    // const ouijaRules = document.querySelector('.ouija-rules');
+    const planchette = document.querySelector('#planchette-glass');
     const ouijaBuild = document.querySelector('#ouija-build');
     const ouijaBoardBuild = document.querySelector('.ouija-board-build');
     const ouijaRiddleBuild = document.querySelector('.ouija-riddle-build');
@@ -42,8 +45,8 @@ function modifyContent() {
     const riddleAnswered = document.querySelector('.riddle-answer');
 
 
-    // Ouija timer section.  Freezes page once time runs out.
-    
+      // Ouija timer section.  Freezes page once time runs out.
+
       let seconds_left = 10;
 
       const interval = setInterval(() =>{
@@ -67,10 +70,21 @@ function modifyContent() {
         const seconds = totalSeconds % 60;
         const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
         const formattedSeconds = seconds < 60 ?  seconds : minutes;
-        
         return formattedMinutes + ":" + formattedSeconds;
       }
 
+
+      // Planchette section
+
+      planchette.innerHTML = `
+        <div class="planchette-wrapper" draggable="true">
+          <img src="../images/PlanchetteTransparent.png" class="planchette-image">
+        </div>
+      `
+
+      // Ouija board build
+
+      
       
 
       
