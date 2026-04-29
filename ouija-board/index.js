@@ -82,6 +82,21 @@ function modifyContent() {
         </div>
       `
 
+
+          const pointerImg = document.querySelector('.planchette-cursor');
+
+            window.addEventListener('mousemove', e => {
+                // Adjust -25 to center the image based on its size
+                pointerImg.style.left = e.pageX - 25 + 'px';
+                pointerImg.style.top = e.pageY - 25 + 'px';
+            });
+
+
+        // const img = document.querySelector('img');
+        //   img.addEventListener('click', () => {
+        //     img.style.cursor = 'planchette'; // Changes to a crosshair when clicked
+        //   });
+
       // Ouija board build
 
       

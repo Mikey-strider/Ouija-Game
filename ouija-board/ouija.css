@@ -2,3 +2,17 @@
   box-sizing: border-box;
 }
 
+body {
+    cursor: none; /* Hide default */
+}
+.planchette-cursor {
+    width: 50px; /* Adjust size */
+    height: 50px;
+    background-image: url('images/PlanchetteTransparent.png');
+    background-size: cover;
+    position: absolute;
+    pointer-events: none; /* Ensure it doesn't interfere with clicks */
+    z-index: 9999;
+}
+
+
