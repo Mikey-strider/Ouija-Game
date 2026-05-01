@@ -37,9 +37,7 @@ function modifyContent() {
     const ouijaTimer = document.querySelector('.ouija-timer');
     // const ouijaRuleMain = document.querySelector('.ouija-rule-main');
     // const ouijaRules = document.querySelector('.ouija-rules');
-    const planchette = document.querySelector('#planchette-glass');
-    const ouijaBuild = document.querySelector('#ouija-build');
-    const ouijaBoardBuild = document.querySelector('.ouija-board-build');
+    
     const ouijaRiddleBuild = document.querySelector('.ouija-riddle-build');
     const riddleQuestion = document.querySelector('.riddle-question');
     const riddleAnswered = document.querySelector('.riddle-answer');
@@ -76,11 +74,14 @@ function modifyContent() {
 
       // Planchette section
 
-      planchette.innerHTML = `
-        <div class="planchette-wrapper" draggable="true">
-          <img src="../images/PlanchetteTransparent.png" class="planchette-image">
-        </div>
-      `
+      const planchette = document.querySelector('#planchette-glass');
+
+
+        planchette.innerHTML = `
+          <div class="planchette-wrapper" draggable="true">
+            <img src="../images/PlanchetteTransparent.png" class="planchette-image">
+          </div>
+        `
 
 
           const pointerImg = document.querySelector('.planchette-cursor');
@@ -99,7 +100,17 @@ function modifyContent() {
 
       // Ouija board build
 
-      
+      const ouijaBuild = document.querySelector('#ouija-build');
+      const ouijaBoardBuild = document.querySelector('.ouija-board-build');
+
+
+        ouijaBuild.innerHTML = `
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        `
+
       
 
       
