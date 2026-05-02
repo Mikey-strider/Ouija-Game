@@ -15,7 +15,12 @@ function modifyContent() {
               <li class="ouija-rules">Rule 5: Hello to submit, Good-Bye to restart</li>
             </ul>
       </header>
-      <div id="ouija-build">
+      <div id="ouija-build" style="
+      background-image: url('../images/blank-ouija-board.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;">
       <div id="planchette-glass">Planchette Glass</div>
         <section class="ouija-board-build">
           <div id="ouija-sun-moon">Sun and Moon</div>
@@ -24,6 +29,9 @@ function modifyContent() {
           <div id="ouija-n-z">N,O,P,...Z</div>
           <div id="ouija-sal">Hello and Good-Bye</div>
         </section>
+        <div class="planchette-wrapper" draggable="true">
+            <img src="../images/PlanchetteTransparent.png" class="planchette-image">
+          </div>
         <section class="ouija-riddle-build">
           <div class="riddle-question">Riddle Questions Here</div>
           <div class="riddle-answer">Riddle Answered Here</div>
@@ -33,14 +41,16 @@ function modifyContent() {
       `
       // Quija main game play functionaltiy. 
     
-    
     const ouijaTimer = document.querySelector('.ouija-timer');
     // const ouijaRuleMain = document.querySelector('.ouija-rule-main');
     // const ouijaRules = document.querySelector('.ouija-rules');
+    // const planchette = document.querySelector('#planchette-glass');
+    // const ouijaBuild = document.querySelector('#ouija-build');
+    // const ouijaBoardBuild = document.querySelector('.ouija-board-build');
+    // const ouijaRiddleBuild = document.querySelector('.ouija-riddle-build');
+    // const riddleQuestion = document.querySelector('.riddle-question');
+    // const riddleAnswered = document.querySelector('.riddle-answer');
     
-    const ouijaRiddleBuild = document.querySelector('.ouija-riddle-build');
-    const riddleQuestion = document.querySelector('.riddle-question');
-    const riddleAnswered = document.querySelector('.riddle-answer');
 
 
       // Ouija timer section.  Freezes page once time runs out.
@@ -71,19 +81,16 @@ function modifyContent() {
         return formattedMinutes + ":" + formattedSeconds;
       }
 
+      ouijaBuild.innerHTML = `
+        <div id="background-image" style="">
 
-      // Planchette section
+        </div>
+        
+        
 
-      const planchette = document.querySelector('#planchette-glass');
-
-
-        planchette.innerHTML = `
-          <div class="planchette-wrapper" draggable="true">
-            <img src="../images/PlanchetteTransparent.png" class="planchette-image">
-          </div>
+        
         `
-
-
+        //planchette mouser
           const pointerImg = document.querySelector('.planchette-cursor');
 
             window.addEventListener('mousemove', e => {
@@ -100,16 +107,35 @@ function modifyContent() {
 
       // Ouija board build
 
-      const ouijaBuild = document.querySelector('#ouija-build');
-      const ouijaBoardBuild = document.querySelector('.ouija-board-build');
+      
 
+    // styling section
 
-        ouijaBuild.innerHTML = `
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        `
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
+  // .rye-regular {
+  //   font-family: "Rye", serif;
+  //   font-weight: 400;
+  //   font-style: normal;
+  //   }
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rye", serif;
+  }
+
+  .ouija-build {
+    
+    
+  }
+
+  `
+  document.head.appendChild(style);
+        
 
       
 
