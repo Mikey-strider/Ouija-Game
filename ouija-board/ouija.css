@@ -1,10 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rye", serif;
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/basement.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
     cursor: none; /* Hide default */
 }
+
+.ouija-rule-main{
+    text-decoration: none;
+
+}
+
 .planchette-cursor {
     width: 50px; /* Adjust size */
     height: 50px;
@@ -14,5 +34,22 @@ body {
     pointer-events: none; /* Ensure it doesn't interfere with clicks */
     z-index: 9999;
 }
+
+.ouija-board-build {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.board-image {
+    background-image: url('../images/blank-ouija-board.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: inherit;
+    
+}
+
 
 
