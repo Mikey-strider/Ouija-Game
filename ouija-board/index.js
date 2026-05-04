@@ -1,6 +1,26 @@
 function modifyContent() {
   const mainOuijaPage = document.getElementById('main-ouija-page');
 
+  const yesNo = [
+    'Yes', 'No',
+  ];
+
+  const AToM = [
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+  ];
+
+  const NToZ = [
+    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+  ];
+
+  const boardNum = [
+    '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+  ];
+
+  const helloGoodbye = [
+    'Hello', 'Good-Bye',
+  ];
+
       // Main Ouija game build. HTML section.
 
     mainOuijaPage.innerHTML = `
@@ -34,14 +54,23 @@ function modifyContent() {
         </section>
       </div>
       `
-      // Quija main game play functionaltiy. 
+      // Ouija main game play functionaltiy. 
     
     const ouijaTimer = document.querySelector('.ouija-timer');
     const ouijaRuleMain = document.querySelector('.ouija-rule-main');
     const ouijaRules = document.querySelector('.ouija-rules');
-    const planchette = document.querySelector('#planchette-glass');
+
     const ouijaBuild = document.querySelector('#ouija-build');
     const ouijaBoardBuild = document.querySelector('.ouija-board-build');
+    
+    const ouijaChoice = document.querySelector('#ouija-yes-no');
+    const ouijaAM = document.querySelector('#ouija-a-m');
+    const ouijaNZ = document.querySelector('#ouija-n-z');
+    const ouijaSalutation = document.querySelector('#ouija-sal');
+    
+    
+    const planchette = document.querySelector('#planchette-glass');
+    
     const ouijaRiddleBuild = document.querySelector('.ouija-riddle-build');
     const riddleQuestion = document.querySelector('.riddle-question');
     const riddleAnswered = document.querySelector('.riddle-answer');
@@ -77,7 +106,7 @@ function modifyContent() {
       }
 
       
-        //planchette mouser
+        //Planchette mouser
           const pointerImg = document.querySelector('.planchette-cursor');
 
             window.addEventListener('mousemove', e => {
@@ -85,6 +114,9 @@ function modifyContent() {
                 pointerImg.style.left = e.pageX - 25 + 'px';
                 pointerImg.style.top = e.pageY - 25 + 'px';
             });
+
+          
+
 
 
         // const img = document.querySelector('img');
@@ -98,14 +130,14 @@ function modifyContent() {
 
     // styling section
 
-    const style = document.createElement("style");
-    style.innerHTML = `
+  //   const style = document.createElement("style");
+  //   style.innerHTML = `
       
 
 
 
-  `
-  document.head.appendChild(style);
+  // `
+  // document.head.appendChild(style);
         
 
       
