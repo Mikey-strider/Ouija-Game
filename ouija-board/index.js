@@ -42,15 +42,15 @@ function modifyContent() {
         <div class="ouija-board-build">
           <div class="board-image">
           <div>
-            <div id="ouija-yes-no" style="display: flex; gap:300px; justify-content: center; align-items: center;"></div>
+            <div id="ouija-yes-no" type="button" onclick="alert('Clicked!')" style="display: flex; gap:300px; justify-content: center; align-items: center;"></div>
             <br>
-            <div id="ouija-a-m" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
+            <div id="ouija-a-m" type="button" onclick="alert('Clicked!')" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
             <br>
-            <div id="ouija-n-z" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
+            <div id="ouija-n-z" type="button" onclick="alert('Clicked!')" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
             <br>
-            <div id="ouija-1-0" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
+            <div id="ouija-1-0" type="button" onclick="alert('Clicked!')" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
             <br>
-            <div id="ouija-sal" style="display: flex; gap:250px; justify-content: center; align-items: center;"></div>
+            <div id="ouija-sal" type="button" onclick="alert('Clicked!')" style="display: flex; gap:250px; justify-content: center; align-items: center;"></div>
             <br>
           </div>
           </div>
@@ -60,7 +60,7 @@ function modifyContent() {
         <div class="ouija-riddle-build">
           <div class="riddle-question">Riddle Questions Here</div>
           <div class="riddle-answer">Riddle Answered Here</div>
-          <button type="button">Submit</button>
+          <button id="startBttn" type="button">Start</button>
         </div>
       </div>
       `
@@ -85,6 +85,7 @@ function modifyContent() {
     const ouijaRiddleBuild = document.querySelector('.ouija-riddle-build');
     const riddleQuestion = document.querySelector('.riddle-question');
     const riddleAnswered = document.querySelector('.riddle-answer');
+    const startBttn = document.getElementById('startBttn');
 
     // Ouija Board game placement
 
@@ -130,7 +131,8 @@ function modifyContent() {
 
       // Ouija timer section. Freezes page once time runs out.
 
-      let seconds_left = 10;
+     startBttn.addEventListener('click', () => {
+       let seconds_left = 10;
 
       const interval = setInterval(() =>{
         ouijaTimer.innerHTML = formatTime(seconds_left);
@@ -154,7 +156,8 @@ function modifyContent() {
         const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
         const formattedSeconds = seconds < 60 ?  seconds : minutes;
         return formattedMinutes + ":" + formattedSeconds;
-      }
+      };
+     });
 
       
         //Planchette mouser
