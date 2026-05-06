@@ -1,6 +1,8 @@
 function modifyContent() {
   const mainOuijaPage = document.getElementById('main-ouija-page');
 
+  // Ouija number and letters array
+
   const yesNo = [
     'Yes', 'No',
   ];
@@ -37,22 +39,29 @@ function modifyContent() {
       </header>
       <div id="ouija-build">
       <div id="planchette-glass"></div>
-        <section class="ouija-board-build">
+        <div class="ouija-board-build">
           <div class="board-image">
-            <div id="ouija-yes-no"></div>
-            <div id="ouija-a-m"></div>
-            <div id="ouija-n-z"></div>
-            <div id="ouija-1-0"></div>
-            <div id="ouija-sal"></div>
+          <div>
+            <div id="ouija-yes-no" style="display: flex; gap:300px; justify-content: center; align-items: center;"></div>
+            <br>
+            <div id="ouija-a-m" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
+            <br>
+            <div id="ouija-n-z" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
+            <br>
+            <div id="ouija-1-0" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
+            <br>
+            <div id="ouija-sal" style="display: flex; gap:250px; justify-content: center; align-items: center;"></div>
+            <br>
           </div>
-        </section>
+          </div>
+        </div>
         <div class="planchette-wrapper" draggable="true">
           </div>
-        <section class="ouija-riddle-build">
+        <div class="ouija-riddle-build">
           <div class="riddle-question">Riddle Questions Here</div>
           <div class="riddle-answer">Riddle Answered Here</div>
           <button type="button">Submit</button>
-        </section>
+        </div>
       </div>
       `
       // Ouija main game play functionaltiy. 
@@ -78,47 +87,48 @@ function modifyContent() {
     const riddleAnswered = document.querySelector('.riddle-answer');
 
     // Ouija Board game placement
-    let ouijaDiv = "";
+
+    let agreeDiv = "";
     for (const agree of yesNo) {
       console.log(agree);
 
-    ouijaChoice.innerHTML = ouijaDiv += `<div class="ouija-board-salutation">${agree}</div>`
+    ouijaChoice.innerHTML = agreeDiv += `<div class="ouija-board-agree">${agree}</div>`
     };
 
 
-    let alpha1 = "";
+    let alpha1Div = "";
     for (const letter of AToM) {
       console.log(letter);
 
-    ouijaAM.innerHTML =  alpha1 += `<div class="ouija-board-standard">${letter}</div>`
+    ouijaAM.innerHTML =  alpha1Div += `<div class="ouija-board-alpha1Div">${letter}</div>`
     };
     
 
-    let alpha2 = "";
+    let alpha2Div = "";
     for (const letterz of NToZ) {
       console.log(letterz);
 
-    ouijaNZ.innerHTML = alpha2 += `<div class="ouija-board-standard">${letterz}</div>`
+    ouijaNZ.innerHTML = alpha2Div += `<div class="ouija-board-alpha2Div">${letterz}</div>`
     };
     
 
-    let numbers = "";
+    let numbersDiv = "";
     for (const count of boardNum) {
       console.log(count);
 
-    ouijaNum.innerHTML = numbers += `<div class="ouija-board-standard">${count}</div>`
+    ouijaNum.innerHTML = numbersDiv += `<div class="ouija-board-numbersDiv">${count}</div>`
     };
 
 
-    let salu = "";
+    let saluDiv = "";
     for (const regard of helloGoodbye) {
       console.log(regard);
 
-    ouijaSalutation.innerHTML = salu += `<div class="ouija-board-salutation">${regard}</div>`
+    ouijaSalutation.innerHTML = saluDiv += `<div class="ouija-board-salutationP">${regard}</div>`
     };
 
 
-      // Ouija timer section.  Freezes page once time runs out.
+      // Ouija timer section. Freezes page once time runs out.
 
       let seconds_left = 10;
 
@@ -155,39 +165,6 @@ function modifyContent() {
                 pointerImg.style.left = e.pageX - 25 + 'px';
                 pointerImg.style.top = e.pageY - 25 + 'px';
             });
-
-          
-
-
-
-        // const img = document.querySelector('img');
-        //   img.addEventListener('click', () => {
-        //     img.style.cursor = 'planchette'; 
-        //   });
-
-      // Ouija board build
-
-      
-
-    // styling section
-
-  //   const style = document.createElement("style");
-  //   style.innerHTML = `
-      
-
-
-
-  // `
-  // document.head.appendChild(style);
-        
-
-      
-
-      
-      
-
-
-
 
 
 

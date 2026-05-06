@@ -9,10 +9,10 @@
 }
 
 body {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    /* display: flex;
+    flex-direction: row; */
+    /* justify-content: center;
+    align-items: center; */
     background-image: url('images/basement.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -39,23 +39,11 @@ body {
 .ouija-board-build {
     display: flex;
     flex-direction: row;
+    /* display: grid;
+    grid-row: inherit; */
     justify-content: center;
     align-items: center;
-}
-
-.ouija-board-salutation{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.ouija-board-standard {
-    display: grid;
-    grid-row: auto;
-    justify-content: center;
-    align-items: center;
+    
 }
 
 .board-image {
@@ -64,8 +52,67 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: contain;
+    height: 950px;
     width: 1200px;
-    
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    padding: 25px;
+    font-size: 60px;
+}
+
+.ouija-board-agree{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    padding: 20px;
+    gap: 10px;
+}
+
+.ouija-board-alpha1 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    padding: 20px;
+    gap: 20px;
+
+}
+
+.ouija-board-alpha2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.ouija-board-numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.ouija-board-salutation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    padding: 20px;
+    gap: 20px;
 }
 
 .ouija-riddle-build{
