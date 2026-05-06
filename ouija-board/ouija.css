@@ -10,6 +10,7 @@
 
 body {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     background-image: url('images/basement.png');
@@ -28,7 +29,7 @@ body {
 .planchette-cursor {
     width: 50px; /* Adjust size */
     height: 50px;
-    background-image: url('images/PlanchetteTransparent.png');
+    background-image: url('images/planchette.png');
     background-size: cover;
     position: absolute;
     pointer-events: none; /* Ensure it doesn't interfere with clicks */
@@ -37,17 +38,33 @@ body {
 
 .ouija-board-build {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    
+}
+
+.ouija-board-salutation{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ouija-board-standard {
+    display: grid;
+    grid-row: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .board-image {
-    background-image: url('../images/blank-ouija-board.jpg');
+    background-image: url('images/blank-ouija-board.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: contain;
+    width: 1200px;
     
 }
 

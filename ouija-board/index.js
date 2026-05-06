@@ -14,7 +14,7 @@ function modifyContent() {
   ];
 
   const boardNum = [
-    '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 0,
   ];
 
   const helloGoodbye = [
@@ -39,10 +39,11 @@ function modifyContent() {
       <div id="planchette-glass"></div>
         <section class="ouija-board-build">
           <div class="board-image">
-            <div id="ouija-yes-no">Yes and No</div>
-            <div id="ouija-a-m">A,B,C,...M</div>
-            <div id="ouija-n-z">N,O,P,...Z</div>
-            <div id="ouija-sal">Hello and Good-Bye</div>
+            <div id="ouija-yes-no"></div>
+            <div id="ouija-a-m"></div>
+            <div id="ouija-n-z"></div>
+            <div id="ouija-1-0"></div>
+            <div id="ouija-sal"></div>
           </div>
         </section>
         <div class="planchette-wrapper" draggable="true">
@@ -66,6 +67,7 @@ function modifyContent() {
     const ouijaChoice = document.querySelector('#ouija-yes-no');
     const ouijaAM = document.querySelector('#ouija-a-m');
     const ouijaNZ = document.querySelector('#ouija-n-z');
+    const ouijaNum = document.querySelector('#ouija-1-0');
     const ouijaSalutation = document.querySelector('#ouija-sal');
     
     
@@ -74,7 +76,46 @@ function modifyContent() {
     const ouijaRiddleBuild = document.querySelector('.ouija-riddle-build');
     const riddleQuestion = document.querySelector('.riddle-question');
     const riddleAnswered = document.querySelector('.riddle-answer');
+
+    // Ouija Board game placement
+    let ouijaDiv = "";
+    for (const agree of yesNo) {
+      console.log(agree);
+
+    ouijaChoice.innerHTML = ouijaDiv += `<div class="ouija-board-salutation">${agree}</div>`
+    };
+
+
+    let alpha1 = "";
+    for (const letter of AToM) {
+      console.log(letter);
+
+    ouijaAM.innerHTML =  alpha1 += `<div class="ouija-board-standard">${letter}</div>`
+    };
     
+
+    let alpha2 = "";
+    for (const letterz of NToZ) {
+      console.log(letterz);
+
+    ouijaNZ.innerHTML = alpha2 += `<div class="ouija-board-standard">${letterz}</div>`
+    };
+    
+
+    let numbers = "";
+    for (const count of boardNum) {
+      console.log(count);
+
+    ouijaNum.innerHTML = numbers += `<div class="ouija-board-standard">${count}</div>`
+    };
+
+
+    let salu = "";
+    for (const regard of helloGoodbye) {
+      console.log(regard);
+
+    ouijaSalutation.innerHTML = salu += `<div class="ouija-board-salutation">${regard}</div>`
+    };
 
 
       // Ouija timer section.  Freezes page once time runs out.
