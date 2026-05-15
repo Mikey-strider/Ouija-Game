@@ -41,18 +41,18 @@ function modifyContent() {
       <div id="planchette-glass"></div>
         <div class="ouija-board-build">
           <div class="board-image">
-          <div>
-            <div id="ouija-yes-no" type="button" onclick="alert('Clicked!')" style="display: flex; gap:300px; justify-content: center; align-items: center;"></div>
-            <br>
-            <div id="ouija-a-m" type="button" onclick="alert('Clicked!')" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
-            <br>
-            <div id="ouija-n-z" type="button" onclick="alert('Clicked!')" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
-            <br>
-            <div id="ouija-1-0" type="button" onclick="alert('Clicked!')" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
-            <br>
-            <div id="ouija-sal" type="button" onclick="alert('Clicked!')" style="display: flex; gap:250px; justify-content: center; align-items: center;"></div>
-            <br>
-          </div>
+            <div>
+              <div id="ouija-yes-no" type="button" onclick="alert('Clicked!')" style="display: flex; gap:300px; justify-content: center; align-items: center;"></div>
+              <br>
+              <div id="ouija-a-m" type="button" onclick="alert('Clicked!')" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
+              <br>
+              <div id="ouija-n-z" type="button" onclick="alert('Clicked!')" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
+              <br>
+              <div id="ouija-1-0" type="button" onclick="alert('Clicked!')" style="display: flex; gap:50px; justify-content: center; align-items: center;"></div>
+              <br>
+              <div id="ouija-sal" type="button" onclick="alert('Clicked!')" style="display: flex; gap:250px; justify-content: center; align-items: center;"></div>
+              <br>
+            </div>
           </div>
         </div>
         <div class="planchette-wrapper" draggable="true">
@@ -134,29 +134,29 @@ function modifyContent() {
      startBttn.addEventListener('click', () => {
        let seconds_left = 10;
 
-      const interval = setInterval(() =>{
-        ouijaTimer.innerHTML = formatTime(seconds_left);
-        seconds_left--;
-        if (seconds_left < 0) {
-          clearInterval(interval);
-          const freezePage = (() => {
-        if (mainOuijaPage) {
-          document.body.style.pointerEvents = 'none';
-          ouijaTimer.innerHTML = "<h1>Time Expired</h1>";
-        }
-      })
-      const freezeDelay = interval;
-      setTimeout(freezePage, freezeDelay);
-        }
-      }, 1000);
+        const interval = setInterval(() =>{
+          ouijaTimer.innerHTML = formatTime(seconds_left);
+          seconds_left--;
+          if (seconds_left < 0) {
+            clearInterval(interval);
+            const freezePage = (() => {
+          if (mainOuijaPage) {
+            document.body.style.pointerEvents = 'none';
+            ouijaTimer.innerHTML = "<h1>Time Expired</h1>";
+          }
+        })
+        const freezeDelay = interval;
+        setTimeout(freezePage, freezeDelay);
+          }
+        }, 1000);
 
-      function formatTime(totalSeconds) {
-        const minutes = Math.floor(totalSeconds / 60);
-        const seconds = totalSeconds % 60;
-        const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
-        const formattedSeconds = seconds < 60 ?  seconds : minutes;
-        return formattedMinutes + ":" + formattedSeconds;
-      };
+        function formatTime(totalSeconds) {
+          const minutes = Math.floor(totalSeconds / 60);
+          const seconds = totalSeconds % 60;
+          const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+          const formattedSeconds = seconds < 60 ?  seconds : minutes;
+          return formattedMinutes + ":" + formattedSeconds;
+        };
      });
 
       
