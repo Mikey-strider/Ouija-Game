@@ -31,9 +31,9 @@ body {
 }
 
 .planchette-cursor {
-    width: 50px; /* Adjust size */
-    height: 50px;
-    background-image: url('images/planchette.png');
+    width: 95px; /* Adjust size */
+    height: 120px;
+    background-image: url('images/planchette4.png');
     background-size: cover;
     position: absolute;
     pointer-events: none; /* Ensure it doesn't interfere with clicks */
@@ -118,6 +118,10 @@ body {
 
 .ouija-riddle-build{
     background-color: rgb(1, 111, 207);
+}
+
+@media screen {
+    
 }
 
 

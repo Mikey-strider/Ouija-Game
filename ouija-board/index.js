@@ -23,6 +23,8 @@ function modifyContent() {
     'Hello', 'Good-Bye',
   ];
 
+   
+
       // Main Ouija game build. HTML section.
 
     mainOuijaPage.innerHTML = `
@@ -98,18 +100,18 @@ function modifyContent() {
 
 
     let alpha1Div = "";
-    for (const letter of AToM) {
-      console.log(letter);
+    for (const letterAM of AToM) {
+      console.log(letterAM);
 
-    ouijaAM.innerHTML =  alpha1Div += `<div class="ouija-board-alpha1Div">${letter}</div>`
+    ouijaAM.innerHTML =  alpha1Div += `<div class="ouija-board-alpha1Div">${letterAM}</div>`
     };
     
 
     let alpha2Div = "";
-    for (const letterz of NToZ) {
-      console.log(letterz);
+    for (const letterNZ of NToZ) {
+      console.log(letterNZ);
 
-    ouijaNZ.innerHTML = alpha2Div += `<div class="ouija-board-alpha2Div">${letterz}</div>`
+    ouijaNZ.innerHTML = alpha2Div += `<div class="ouija-board-alpha2Div">${letterNZ}</div>`
     };
     
 
@@ -127,6 +129,17 @@ function modifyContent() {
 
     ouijaSalutation.innerHTML = saluDiv += `<div class="ouija-board-salutationP">${regard}</div>`
     };
+
+    // Ouija buttons functionality
+    
+    ouijaChoice.addEventListener('click', () => {
+      riddleAnswered.style.display = 'block';
+    });
+
+    ouijaAM.addEventListener('click', () => {
+      riddleAnswered.style.display = 'block';
+    });
+   
 
 
       // Ouija timer section. Freezes page once time runs out.
@@ -168,6 +181,35 @@ function modifyContent() {
                 pointerImg.style.left = e.pageX - 25 + 'px';
                 pointerImg.style.top = e.pageY - 25 + 'px';
             });
+      
+      const style = document.createElement("style");
+      style.innerHTML = `
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        
+        @media screen and (width <= 750px) {
+            .ouija-board-build { width: 100% }
+            .board-image { width: 100%; }
+            .ouija-yes-no { width: 75%; }
+            .ouija-a-m { width: 75%; }
+            .ouija-n-z { width: 75%; }
+            .ouija-1-0 { width: 75%; }
+            .ouija-sal { width: 75%; }
+
+        }
+
+        @media screen and (width >= 600px) {
+            body { font-size: 14px }
+
+
+        }
+
+      `;
+      document.head.appendChild(style);
 
 
 
