@@ -56,8 +56,10 @@ function modifyContent() {
               <li class="ouija-rules">Rule 5: Hello to submit, Good-Bye to restart</li>
             </ul>
         <div class="ouija-riddle-build">
-          <div class="riddle-question">Riddle Questions Here</div>
-          </div>
+          <section class="riddle-question" hidden>
+            <div class="riddled"></div>
+          </section>
+        </div>
           </header>
           <button id="start-bttn" type="button">Start</button>
       <div id="ouija-build">
@@ -82,7 +84,6 @@ function modifyContent() {
         <div class="planchette-wrapper" draggable="true">
         </div>
       </div>
-      <section></section>
       <section></section>
       <section></section>
     `;
@@ -168,9 +169,29 @@ function modifyContent() {
       riddleAnswered.innerText += e.target.textContent;
     });
 
+
+
+
+    // Riddle question and answer section:
+
+    let nextRiddle = 0;
+
+    const riddling = () => {
+      riddleQuestion.innerText = theRiddles[nextRiddle].riddle;
+      nextRiddle = nextRiddle + 1;
+    };
+
+    let answering = 0;
+
     ouijaSalutation.addEventListener('click', (e) => {
       if (e.target.textContent !== 'Good-Bye'){
-        riddleAnswered.innerText = e.target.textContent;
+        if (riddleAnswered.textContent === theRiddles[answering].answer) {
+          riddling();
+          riddleAnswered.textContent = '';
+          riddleAnswered.focus();
+        } else {
+          riddleAnswered.innerText = 'Wrong Answer!';
+        }
       } else {
         riddleAnswered.textContent = '';
         riddleAnswered.focus();
@@ -180,10 +201,15 @@ function modifyContent() {
 
 
 
-      // Ouija timer section. Freezes page once time runs out.
+
+      // Ouija timer section. Beings game and freezes page once time runs out.
 
      startBttn.addEventListener('click', () => {
-       let seconds_left = 10;
+      riddleQuestion.removeAttribute('hidden');
+      riddling();
+
+
+       let seconds_left = 60;
 
         const interval = setInterval(() =>{
           ouijaTimer.innerHTML = formatTime(seconds_left);
