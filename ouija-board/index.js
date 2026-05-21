@@ -26,6 +26,20 @@ function modifyContent() {
   ];
 
 
+  // The Riddles:
+
+  const theRiddles = [
+    {
+      riddle: 'I wear a dusty, faded victorian dress. My house is a chaotic, broken mess. I watch from the window but never go out, I am the reason the servants shout! What am I?',
+      answer: 'GHOST',
+    },
+    {
+      riddle: 'I do not have eyes, but once I did see. Once I had thoughts, but now I am white and empty. What am I?',
+      answer: 'SKULL',
+    },
+  ];
+
+
    
 
       // Main Ouija game build. HTML section.
@@ -68,8 +82,13 @@ function modifyContent() {
         <div class="planchette-wrapper" draggable="true">
         </div>
       </div>
-      `;
+      <section></section>
+      <section></section>
+      <section></section>
+    `;
   
+
+
   
       // Ouija main game play functionaltiy. 
     
@@ -93,6 +112,7 @@ function modifyContent() {
     const riddleQuestion = document.querySelector('.riddle-question');
     const riddleAnswered = document.querySelector('.riddle-answer');
     const startBttn = document.getElementById('start-bttn');
+
 
 
     
@@ -128,6 +148,8 @@ function modifyContent() {
     };
 
 
+
+
     // Ouija buttons functionality
     
     ouijaChoice.addEventListener('click', (e) => {
@@ -147,8 +169,15 @@ function modifyContent() {
     });
 
     ouijaSalutation.addEventListener('click', (e) => {
-      riddleAnswered.innerText += e.target.textContent;
+      if (e.target.textContent !== 'Good-Bye'){
+        riddleAnswered.innerText = e.target.textContent;
+      } else {
+        riddleAnswered.textContent = '';
+        riddleAnswered.focus();
+      }
     });
+
+
 
 
       // Ouija timer section. Freezes page once time runs out.
@@ -181,6 +210,7 @@ function modifyContent() {
         };
      });
 
+
       
         //Planchette mouser
       const pointerImg = document.querySelector('.planchette-cursor');
@@ -190,6 +220,10 @@ function modifyContent() {
             pointerImg.style.left = e.pageX - 25 + 'px';
             pointerImg.style.top = e.pageY - 25 + 'px';
         });
+
+
+
+        // Responsive styling
       
       const style = document.createElement("style");
       style.innerHTML = `
