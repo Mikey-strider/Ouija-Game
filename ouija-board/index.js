@@ -102,7 +102,7 @@ function modifyContent() {
       multipleChoice: {
         a: 'He had been training to for a triathalon.',
         b: 'He was a volunteer Marshall.',
-        c: 'He had been strenght training.',
+        c: 'He had been strength training.',
       },
       triviaAnswer: 'B',
     },
@@ -111,18 +111,18 @@ function modifyContent() {
       multipleChoice: {
         a: 'They kept being too excited to see everyone.',
         b: 'They kept licking the meat and fake blood off of themselves.',
-        c: 'They kept being too aggresive with the main actress.',
+        c: 'They kept being too aggresive with the team.',
       },
       triviaAnswer: 'B',
     },
     {
-      triviaQuestion: 'How many times was Tony Todd stug by bees while making Candyman?',
+      triviaQuestion: 'Which movie did the term "Groovy!" come from?',
       multipleChoice: {
-        a: '',
-        b: '',
-        c: '',
+        a: 'Army of Darkness',
+        b: 'They Live',
+        c: 'Evil Dead 2',
       },
-      triviaAnswer: '',
+      triviaAnswer: 'C',
     },
   ];
 
