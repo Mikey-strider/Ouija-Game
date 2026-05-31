@@ -3,7 +3,7 @@ function modifyContent() {
 
 
 
-  // Ouija number and letters array
+  // Ouija number and letters array 
 
   const yesNo = [
     'Yes', 'No',
@@ -126,7 +126,7 @@ function modifyContent() {
     },
   ];
 
-  const truthOrDare = [];
+  const trueOrFalse = [];
 
 
    
@@ -186,6 +186,7 @@ function modifyContent() {
 
     const ouijaBuild = document.querySelector('#ouija-build');
     const ouijaBoardBuild = document.querySelector('.ouija-board-build');
+    const ouijaFunction = document.querySelector('.ouija-function');
     
     const ouijaChoice = document.querySelector('#ouija-yes-no');
     const ouijaAM = document.querySelector('#ouija-a-m');
@@ -236,11 +237,8 @@ function modifyContent() {
     };
 
 
-
-    // Ouija buttons functionality
-
     ouijaChoice.addEventListener('click', (e) => {
-        riddleAnswered.innerText += e.target.textContent;
+      riddleAnswered.innerText += e.target.textContent;
     });
 
     ouijaAM.addEventListener('click', (e) => {

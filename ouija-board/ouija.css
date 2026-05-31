@@ -44,7 +44,7 @@ body {
 
 .planchette-cursor {
     width: 145px; /* Adjust size */
-    height: 175px;
+    height: 190px;
     background-image: url('images/derezplanch.png');
     background-size: cover;
     position: absolute;
@@ -67,9 +67,18 @@ body {
     
 }
 
-.ouija-board-build .ouija-function{
+.ouija-function div{
     pointer-events: auto;
 }
+
+.ouija-function div:hover {
+    color: #6ec23aef;
+}
+
+/* .ouijaChoice div:click {
+
+} */
+
 
 .board-image {
     display: flex;
